@@ -23,7 +23,7 @@ USE `mydb_a1_2` ;
 -- Table `mydb_a1_2`.`usuarios`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`usuarios` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NULL,
   `cpf` CHAR(11) NULL,
   `endereco` VARCHAR(255) NULL,
@@ -40,7 +40,7 @@ ENGINE = InnoDB;
 -- Table `mydb_a1_2`.`universidades`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`universidades` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NULL,
   `cnpj` CHAR(14) NULL,
   `endereco` VARCHAR(255) NULL,
@@ -53,7 +53,7 @@ ENGINE = InnoDB;
 -- Table `mydb_a1_2`.`usuario_universidade`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`usuario_universidade` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `usuario_id` INT NULL,
   `universidade_id` INT NULL,
   PRIMARY KEY (`id`),
@@ -76,7 +76,7 @@ ENGINE = InnoDB;
 -- Table `mydb_a1_2`.`tipos_postagens`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`tipos_postagens` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -86,7 +86,7 @@ ENGINE = InnoDB;
 -- Table `mydb_a1_2`.`postagens`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`postagens` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `usuario_id` INT NULL,
   `conteudo` VARCHAR(255) NULL,
   `data_postagem` TIMESTAMP NULL,
@@ -111,7 +111,7 @@ ENGINE = InnoDB;
 -- Table `mydb_a1_2`.`tipos_reacoes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`tipos_reacoes` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -121,7 +121,7 @@ ENGINE = InnoDB;
 -- Table `mydb_a1_2`.`reacoes_postadas`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`reacoes_postadas` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `usuario_id` INT NULL,
   `data_postagem` TIMESTAMP NULL,
   `postagem_id` INT NULL,
@@ -152,7 +152,7 @@ ENGINE = InnoDB;
 -- Table `mydb_a1_2`.`tipos_arquivo`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`tipos_arquivo` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -162,7 +162,7 @@ ENGINE = InnoDB;
 -- Table `mydb_a1_2`.`arquivos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`arquivos` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `diretorio` VARCHAR(255) NULL,
   `data_postagem` TIMESTAMP NULL,
   `tipo_arquivo_id` INT NULL,
@@ -188,7 +188,7 @@ ENGINE = InnoDB;
 -- Table `mydb_a1_2`.`comentarios`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`comentarios` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `usuario_id` INT NULL,
   `conteudo` VARCHAR(255) NULL,
   `data_postagem` TIMESTAMP NULL,
@@ -213,7 +213,7 @@ ENGINE = InnoDB;
 -- Table `mydb_a1_2`.`seguidores`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`seguidores` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `usuario_seguido` INT NULL,
   `usuario_seguidor` INT NULL,
   PRIMARY KEY (`id`),
@@ -236,7 +236,7 @@ ENGINE = InnoDB;
 -- Table `mydb_a1_2`.`bloqueados`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`bloqueados` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `usuario_bloqueado` INT NULL,
   `usuario_bloqueador` INT NULL,
   PRIMARY KEY (`id`),
@@ -259,7 +259,7 @@ ENGINE = InnoDB;
 -- Table `mydb_a1_2`.`grupos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`grupos` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NULL,
   `descricao` VARCHAR(255) NULL,
   PRIMARY KEY (`id`))
@@ -270,7 +270,7 @@ ENGINE = InnoDB;
 -- Table `mydb_a1_2`.`grupo_usuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`grupo_usuario` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `usuario_id` INT NULL,
   `grupo_id` INT NULL,
   PRIMARY KEY (`id`),
@@ -293,7 +293,7 @@ ENGINE = InnoDB;
 -- Table `mydb_a1_2`.`notificacoes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb_a1_2`.`notificacoes` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `conteudo` VARCHAR(255) NULL,
   `postagem_id` INT NULL,
   `usuario_id` INT NULL,
