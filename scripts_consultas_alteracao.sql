@@ -1,5 +1,4 @@
 -- Alteração de tipo de conta (ex: de aluno para professor)
-
 UPDATE usuarios
 SET tipo = 'P'
 WHERE id = 1; 
