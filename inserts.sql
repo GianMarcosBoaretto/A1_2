@@ -2,7 +2,10 @@
 INSERT INTO usuarios (nome, cpf, endereco, email, data_nascimento, usuario, senha, tipo) VALUES
 ('Gian Marcos Boaretto', '12345678901', 'Rua A, 123', 'gian@email.com', '1995-05-20', 'gianboaretto', 'senha123', 'A'),
 ('Guilherme Anzollin', '98765432100', 'Av B, 456', 'guilherme@email.com', '1990-07-15', 'guilhermea', 'senha123', 'P'),
-('Pedro Legal', '11122233344', 'Rua C, 789', 'pedro@email.com', '1998-02-10', 'plegal', 'senha123', 'A');
+('Pedro Legal', '11122233344', 'Rua C, 789', 'pedro@email.com', '1998-02-10', 'plegal', 'senha123', 'A'),
+('Jose', '10981233344', 'Rua teste 1', 'jose@email.com', '2005-02-10', 'jose', 'senha123', 'A'),
+('Fernando', '15981236944', 'Rua teste 2', 'fernando@email.com', '2009-08-10', 'fernando', 'senha123', 'A'),
+('Henrique', '15698745632', 'Rua teste 3', 'henrique@email.com', '2010-08-10', 'henrique', 'senha123', 'A');
 
 -- Povoamento na tabela universidades
 INSERT INTO universidades (nome, cnpj, endereco, email) VALUES
@@ -26,7 +29,8 @@ INSERT INTO tipos_postagens (nome) VALUES
 INSERT INTO postagens (usuario_id, conteudo, data_postagem, tipo_id) VALUES
 (1, 'Confira meu novo artigo sobre IA!', NOW(), 1),
 (2, 'Redes neurais - Novas descobertas?', NOW(), 2),
-(3, 'Participe do evento sobre Banco de Dados na UNOESC!', NOW(), 3);
+(3, 'Participe do evento sobre Banco de Dados na UNOESC!', NOW(), 3),
+(1, 'Novo Artigo sobre Processamento de Sinais!', NOW(), 1);
 
 -- Povoamento na tabela Tipos de Reações
 INSERT INTO tipos_reacoes (nome) VALUES
@@ -39,12 +43,16 @@ INSERT INTO tipos_reacoes (nome) VALUES
 INSERT INTO reacoes_postadas (usuario_id, data_postagem, postagem_id, reacao_id) VALUES
 (2, NOW(), 1, 1),
 (3, NOW(), 1, 2),
+(3, NOW(), 1, 3),
 (1, NOW(), 2, 3);
 
 -- Povoamento na tabela Comentários nas Postagens
 INSERT INTO comentarios (usuario_id, conteudo, data_postagem, postagem_id) VALUES
 (2, 'Muito bom o artigo!', NOW(), 1),
-(1, 'Posso te ajudar com isso.', NOW(), 2);
+(4, 'Bem Legal!', NOW(), 1),
+(1, 'Posso te ajudar com isso.', NOW(), 2)
+(1, 'Artigo bem completo.', NOW(), 1)
+(1, 'Artigo muito bom.', NOW(), 4);
 
 -- Povoamento na tabela Tipos de Arquivos
 INSERT INTO tipos_arquivo (nome) VALUES
@@ -75,8 +83,12 @@ INSERT INTO grupos (nome, descricao) VALUES
 -- Povoamento na tabela Participação de usuários nos grupos
 INSERT INTO grupo_usuario (usuario_id, grupo_id) VALUES
 (1, 1),
-(2, 2),
-(3, 1);
+(3, 1),
+(2, 1),
+(4, 1),
+(5, 1),
+(6, 1),
+(2, 2);
 
 -- Povoamento na tabela Notificações
 INSERT INTO notificacoes (conteudo, postagem_id, usuario_id, visualizada, data_notificacao) VALUES
